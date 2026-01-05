@@ -1,0 +1,64 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: main
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/openaire/Generic-Matomo-Tracker:
+      branch: master
+      repo: https://github.com/openaire/Generic-Matomo-Tracker.git
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/openaire/Generic-Matomo-Tracker git:
+        commands:
+        - /usr/bin/env sh .sqa/script.craggy-olive-bulldog.sh
+        container: qc.acc_leaky-malachite-argentino
+  QC.Doc:
+    repos:
+      github.com/openaire/Generic-Matomo-Tracker find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.nerdy-cerulean-capybara.sh
+        container: qc.doc_shabby-amethyst-fowl
+      github.com/openaire/Generic-Matomo-Tracker git:
+        commands:
+        - /usr/bin/env sh .sqa/script.cranky-sepia-hyrax.sh
+        container: qc.doc_geeky-harlequin-goose
+      github.com/openaire/Generic-Matomo-Tracker markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.silly-yellow-alligator.sh
+        container: qc.doc_boozy-pumpkin-toad
+  QC.Lic:
+    repos:
+      github.com/openaire/Generic-Matomo-Tracker licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.messy-wisteria-retriever.sh
+        container: qc.lic_skimpy-olivine-fossa
+  QC.Sec:
+    repos:
+      github.com/openaire/Generic-Matomo-Tracker bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.greasy-taupe-moth.sh
+        container: qc.sec_leaky-myrtle-drever
+  QC.Sty:
+    repos:
+      github.com/openaire/Generic-Matomo-Tracker flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.clammy-russet-chicken.sh
+        container: qc.sty_gummy-ecru-impala
+  QC.Uni:
+    repos:
+      github.com/openaire/Generic-Matomo-Tracker pytest:
+        commands:
+        - /usr/bin/env sh .sqa/script.pasty-brass-vulture.sh
+        container: qc.uni_wheezy-platinum-zorse
+  QC.Ver:
+    repos:
+      github.com/openaire/Generic-Matomo-Tracker get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.snippy-beige-lizard.sh
+        container: qc.ver_chewy-buff-mouse
+timeout: 5400
