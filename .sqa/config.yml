@@ -2,7 +2,7 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: main
+      branch: feature/pynblint_fix
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/openaire/Generic-Matomo-Tracker:
       branch: master
@@ -15,50 +15,50 @@ sqa_criteria:
     repos:
       github.com/openaire/Generic-Matomo-Tracker git:
         commands:
-        - /usr/bin/env sh .sqa/script.craggy-olive-bulldog.sh
-        container: qc.acc_leaky-malachite-argentino
+        - /usr/bin/env sh .sqa/script.lagoon_observant_llama.sh
+        container: qc.acc_heather_humble_panda
   QC.Doc:
     repos:
       github.com/openaire/Generic-Matomo-Tracker find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.nerdy-cerulean-capybara.sh
-        container: qc.doc_shabby-amethyst-fowl
+        - /usr/bin/env sh .sqa/script.walnut_cranky_echidna.sh
+        container: qc.doc_byzantium_impulsive_wolverine
       github.com/openaire/Generic-Matomo-Tracker git:
         commands:
-        - /usr/bin/env sh .sqa/script.cranky-sepia-hyrax.sh
-        container: qc.doc_geeky-harlequin-goose
+        - /usr/bin/env sh .sqa/script.flint_wise_toucan.sh
+        container: qc.doc_mist_adaptable_chameleon
       github.com/openaire/Generic-Matomo-Tracker markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.silly-yellow-alligator.sh
-        container: qc.doc_boozy-pumpkin-toad
+        - /usr/bin/env sh .sqa/script.polar_open_chipmunk.sh
+        container: qc.doc_pansy_tactful_gazelle
   QC.Lic:
     repos:
       github.com/openaire/Generic-Matomo-Tracker licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.messy-wisteria-retriever.sh
-        container: qc.lic_skimpy-olivine-fossa
+        - /usr/bin/env sh .sqa/script.heather_motivated_nighthawk.sh
+        container: qc.lic_lapis_loving_dugong
   QC.Sec:
     repos:
       github.com/openaire/Generic-Matomo-Tracker bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.greasy-taupe-moth.sh
-        container: qc.sec_leaky-myrtle-drever
+        - /usr/bin/env sh .sqa/script.clove_tranquil_peacock.sh
+        container: qc.sec_violet_authentic_jellyfish
   QC.Sty:
     repos:
       github.com/openaire/Generic-Matomo-Tracker flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.clammy-russet-chicken.sh
-        container: qc.sty_gummy-ecru-impala
+        - /usr/bin/env sh .sqa/script.cinnabar_thankful_mongoose.sh
+        container: qc.sty_bluebell_zany_vulture
   QC.Uni:
     repos:
       github.com/openaire/Generic-Matomo-Tracker pytest:
         commands:
-        - /usr/bin/env sh .sqa/script.pasty-brass-vulture.sh
-        container: qc.uni_wheezy-platinum-zorse
+        - /usr/bin/env sh .sqa/script.brown_dizzy_salamander.sh
+        container: qc.uni_papaya_dreamy_manatee
   QC.Ver:
     repos:
       github.com/openaire/Generic-Matomo-Tracker get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.snippy-beige-lizard.sh
-        container: qc.ver_chewy-buff-mouse
+        - /usr/bin/env sh .sqa/script.mulberry_alert_hare.sh
+        container: qc.ver_lagoon_amiable_panther
 timeout: 5400
